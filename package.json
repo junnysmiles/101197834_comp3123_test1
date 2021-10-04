@@ -1,0 +1,26 @@
+{
+  "name": "101197834_comp3123_test1",
+  "version": "1.0.0",
+  "description": "Full Stack Development - Lab Test 1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "q1": "nodemon ./question-1/question_one.js",
+    "q2": "nodemon ./question-2/question_two.js",
+    "q3": "nodemon ./question-3/question_three.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/junnysmiles/101197834_comp3123_test1.git"
+  },
+  "keywords": [],
+  "author": "Jun Yan Gan - 101197834",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/junnysmiles/101197834_comp3123_test1/issues"
+  },
+  "homepage": "https://github.com/junnysmiles/101197834_comp3123_test1#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.13"
+  }
+}
