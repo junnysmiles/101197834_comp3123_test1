@@ -4,8 +4,8 @@
 
 // Question 1 - ES6 Features
 // Create a script with a function named lowerCaseWords that takes a mixed array as input.
-// The function will do the following: return a promise that i resolved or reject,
-// filter the non-string and lower case the remaining words
+/* The function will do the following: return a promise that i resolved or reject,
+    filter the non-string and lower case the remaining words */
 
 lowerCaseWords = (array) => {
     const newArr = array.filter(e => typeof e == 'string')
