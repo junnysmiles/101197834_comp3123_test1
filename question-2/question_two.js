@@ -21,7 +21,7 @@ let resolvedPromise = new Promise((resolve) => {
 })
 
 // Rejected Promise method
-let rejectedPromise = new Promise((reject) {
+let rejectedPromise = new Promise((reject) => {
     setTimeout(() => {
         let error = {'error': 'delayed exception!'}
         reject(error)
