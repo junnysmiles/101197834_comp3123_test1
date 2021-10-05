@@ -32,45 +32,49 @@ const logDir = './question-3/logs'
 
 // Add Function - Create the new directory, create log files and output on console 
 let add = () => {
-    // Checks if the directory exists
+    // Checks if the directory exists, if not, it will create it
     if (!fs.existsSync(logDir)) {
         fs.mkdirSync(logDir);
         console.log(`${logDir} created.`)
+    } else {
+        console.log(`${logDir} already created.`)
     }
 
+    // Change directory into the log directory
     process.chdir(logDir)
 
+    // For loop to create each file up to 10, so 9 files
     for (let i = 0; i < 10; i++) {
-        fs.writeFileSync(`log${i}.txt`, `log ${i} file`, function(error) {
-            if (error) {
-                console.log(`Error creating 'log${i}.txt' file.`)
-            } else {
-                console.log(`Success creating 'log${i}.txt' file.`)
-            }
-        });
+        // Create and write in the file
+        fs.writeFileSync(`log${i}.txt`, `log ${i} file`)
+
+        // Output all file names to console
+        console.log(`log${i}`)
     }
-    fs.readdirSync(logDir).forEach(file => {
-        console.log(file)
-    })
 }
+
+// I am unsure as to why it is not deleting the directory or files... I am positive this is correct:
 
 // Remove Log Files function
 let remove = () => {
+    // If statement to make sure the directory exists
     if (fs.existsSync(logDir)) {
-        process.chdir(logDir);
-        fs.readdir(process.cwd(), (err, files) => {
-            files.forEach((file) => {
+        // Change to the log directory
+        process.chdir(logDir)
 
-                fs.unlink(file, function(err) {
-                    if(err) {
-                        console.log(`Error deleting file '${file}'`)
-                    } else {
-                        console.log(`delete files ${file}`)
-                    };
+        // Reads and returns log directory
+        fs.readdirSync(process.cwd(), (error, files) => {
+            // For each statement to iterate through each file to delete
+            files.forEach((file) => {
+                fs.unlink(file, function(error) {
+                    if(error) {
+                        console.log(`Error deleting file ${file}`)
+                    }
+                    console.log(`Deleting files... ${file}`)
                 });
             });
         });
-    };
+    }
 }
 
 add()
